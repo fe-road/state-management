@@ -1,18 +1,14 @@
-import { useMemo } from 'react';
-import './App.css'
 import Header from './components/Header'
 import ProfileCard from './components/ProfileCard'
-import { getUser } from './services/userService';
+import { Provider } from 'react-redux';
+import store from './store/store';
 
 const App = () => {
-    const user = useMemo(getUser, []);
-
     return (
-        <>
-            <p>Oh no! We don't know how to deal with the user!</p>
-            {/* <Header />
-            <ProfileCard /> */}
-        </>
+        <Provider store={store}>
+            <Header />
+            <ProfileCard />
+        </Provider>
     );
 };
 

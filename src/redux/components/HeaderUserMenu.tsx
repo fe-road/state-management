@@ -1,13 +1,12 @@
-import { useContext } from 'react';
-import { UserModel } from '../models/UserModel';
-import { UserContext } from '../contexts/UserContext';
+import { useSelector } from 'react-redux';
+import { RootState } from '../store/store';
 
 const HeaderUserMenu = () => {
-    const user: UserModel = useContext(UserContext);
+    const name: string = useSelector((state: RootState) => state.user.name);
 
     return (
         <div>
-            <span>Logged in user: {user.name}</span>
+            <span>Logged in user: {name}</span>
         </div>
     );
 };
