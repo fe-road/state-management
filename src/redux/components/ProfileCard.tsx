@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
 import { useState } from 'react';
-import { setAge, setName } from '../store/user/userSlice';
+import { setAge, setName } from '../store/reducers/user/userSlice';
 
 const ProfileCard = () => {
     const dispatch = useDispatch<AppDispatch>();

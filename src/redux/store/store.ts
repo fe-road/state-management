@@ -1,13 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import taskReducer from './task/taskSlice';
-import userReducer from './user/userSlice';
+import { logMiddleware } from './middlewares/logMiddleware';
+
+import taskReducer from './reducers/task/taskSlice';
+import userReducer from './reducers/user/userSlice';
 
 const store = configureStore({
     reducer: {
         task: taskReducer,
         user: userReducer,
     },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logMiddleware),
 });
 
 export default store;

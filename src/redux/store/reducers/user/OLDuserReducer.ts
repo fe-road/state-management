@@ -1,5 +1,5 @@
-import { UserModel } from '../../models/UserModel';
-import { getUser } from '../../services/userService';
+import { UserModel } from '../../../models/UserModel';
+import { getUser } from '../../../services/userService';
 import { UserActionTypes } from './OLDuserActions';
 import { SET_NAME, SET_AGE } from './OLDuserTypes';
 
